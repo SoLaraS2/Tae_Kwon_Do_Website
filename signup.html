@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class Signup</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="signup-container">
+    <h2>Sign Up for Class</h2>
+    <p id="class-info">Class: Group Class (10:00 AM - 12:00 PM)</p> <!-- Update dynamically -->
+
+    <form action="submit_signup.php" method="POST">
+      <input type="hidden" id="class-name" name="class_name" value="Group Class">
+      <input type="hidden" id="class-time" name="class_time" value="10:00 AM - 12:00 PM">
+      
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" required>
+
+      <button type="submit">Sign Up</button>
+    </form>
+  </div>
+
+  <script>
+    // Example function to populate class details dynamically
+    // You can replace these values with actual dynamic values as needed.
+    const urlParams = new URLSearchParams(window.location.search);
+    const className = urlParams.get('class');  // e.g., "Group Class"
+    const classTime = urlParams.get('time');   // e.g., "10:00 AM - 12:00 PM"
+
+    if (className && classTime) {
+      document.getElementById('class-info').innerText = `Class: ${className} (${classTime})`;
+      document.getElementById('class-name').value = className;
+      document.getElementById('class-time').value = classTime;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tae Kwon Do On The Go</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header Section -->
+  <div class="header-box">
+    <h1>Maybe scheduling happens here?</h1>
+  </div>
+
+  <!-- Description Section -->
+  <div class="description-box">
+    <p>For this beginning stage, we can show which time slots and focuses otehr people have scheduled with you. If they wish to have a group class that is!</p>
+  </div>
+
+  <div class="schedule-box">
+    <h2>Schedule</h2>
+    <!-- Table to display schedule -->
+    <table id="schedule-table">
+      <tr>
+        <th>Time</th>
+        <th>Class</th>
+        <th>Duration</th>
+        <th>Location</th>
+        <th>Instructor</th>
+        <th>Sign-Ups</th>
+      </tr>
+      <tr data-class="Weapons Class" data-time="10:00 AM - 12:00 PM" data-count="5">
+        <td onclick="openSignupForm(this)"><span>10:00 AM - 12:00 PM</span></td>
+        <td onclick="openSignupForm(this)">Weapons Class</td>
+        <td onclick="openSignupForm(this)">1 hour</td>
+        <td onclick="openSignupForm(this)">Creepy Trailer</td>
+        <td onclick="openSignupForm(this)">Billie Jean</td>
+        <td class="signup-count">5</td>
+      </tr>
+      <tr data-class="Endurance Training" data-time="12:00 PM - 2:00 PM" data-count="2">
+        <td onclick="openSignupForm(this)"><span>12:00 PM - 2:00 PM</span></td>
+        <td onclick="openSignupForm(this)">Endurance Training</td>
+        <td onclick="openSignupForm(this)">1 hour</td>
+        <td onclick="openSignupForm(this)">Creepy Trailer at your house!!! Run!</td>
+        <td onclick="openSignupForm(this)">Jesus?</td>
+        <td class="signup-count">2</td>
+      </tr>
+    </table>
+  </div>
+  
+  <!-- Signup Form Modal -->
+  <div id="signup-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeSignupForm()">&times;</span>
+      <h2>Sign Up for Class</h2>
+      <p id="class-info"></p>
+  
+      <form onsubmit="submitSignupForm(event)">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+  
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+  
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+  
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+  </div>
+  
+  
+
+<div class="button-box">
+    <a href="index.html">Go back</a>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
