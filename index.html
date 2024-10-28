@@ -3,13 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Simple Website</title>
+  <title>Tae Kwon Do On The Go</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Welcome to My Simple Website</h1>
-  <p>This is the simplest website ever!</p>
-  <button onclick="showMessage()">Click me!</button>
+  <h1>Welcome to the Tae Kwon Do On The Go website!</h1>
+  <p>I can add basically anything you want into this website. Just let me know theme colors you want maybe? Starting next semester (January) I can also start working on getting us an app.</p>
+  <button onclick="showMessage()">Click this</button>
+  <p>I can also add the flipping ID cards in here too. As interactive little things. Look!</p>
+
+  <!-- Flipping ID Card -->
+  <div class="card-container" onclick="flipCard(this)">
+    <div class="card">
+      <!-- Front Side -->
+      <div class="card-front">
+        <img src="snom.jpg" alt="Profile Picture" class="profile-image">
+        <h2 class="name">Your Name</h2>
+        <p class="info">Some info about the person</p>
+      </div>
+      <!-- Back Side -->
+      <div class="card-back">
+        <h3>More Details</h3>
+        <p>Details about this person that appear on the back side.</p>
+      </div>
+    </div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
