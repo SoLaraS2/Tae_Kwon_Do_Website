@@ -23,24 +23,24 @@ function openSignupForm(cell) {
   
     // Store the count element reference for later updates
     document.getElementById('signup-modal').dataset.countElement = signupCount;
-  }
+}
   
   // Close the signup modal
-  function closeSignupForm() {
-    document.getElementById('signup-modal').style.display = 'none';
-  }
+function closeSignupForm() {
+  document.getElementById('signup-modal').style.display = 'none';
+}
   
-  // Handle form submission and update the count
-  function submitSignupForm(event) {
-    event.preventDefault(); // Prevent form from submitting normally
-  
-    // Retrieve and update the count element
-    const countElement = document.getElementById('signup-modal').dataset.countElement;
-    let currentCount = parseInt(countElement.innerText, 10);
-    countElement.innerText = currentCount + 1;
-  
-    // Reset the form and close the modal
-    event.target.reset();
-    closeSignupForm();
-  }
+// Handle form submission and update the count
+function submitSignupForm(event) {
+  event.preventDefault(); // Prevent form from submitting normally
+
+  // Retrieve and update the count element
+  const countElement = document.getElementById('signup-modal').dataset.countElement;
+  let currentCount = parseInt(countElement.innerText, 10);
+  countElement.innerText = currentCount + 1;
+
+  // Reset the form and close the modal
+  event.target.reset();
+  closeSignupForm();
+}
   
