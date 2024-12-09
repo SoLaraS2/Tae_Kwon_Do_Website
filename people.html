@@ -1,45 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Tae Kwon Do On The Go</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Logo and Website Name -->
-  <div class="logo-header" style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: #02180a83; padding: 10px 20px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
-    <div style="display: flex; align-items: center;">
-      <img src="logo.png" alt="Website Logo" style="width: 40px; height: 40px; margin-right: 10px;">
-      <span style="font-size: 1.5rem; font-weight: bold; color: #fff;">Tae Kwon Do On The Go</span>
+  <div class="header-container">
+    <!-- Logo and Website Name -->
+    <div class="logo-header">
+      <div class="site-title">
+        <img src="logo.png" alt="Website Logo">
+        <span>Tae Kwon Do On The Go</span>
+      </div>
     </div>
-  </div>
 
-  <!-- Navigation Tab -->
-  <nav class="navigation-bar" style="width: 100%; background-color: #85d4a383; padding: 10px 20px;">
-    <ul style="display: flex; list-style: none; margin: 0; padding: 0; justify-content: space-around;">
-      <li><a href="index.html" style="text-decoration: none; color: #fff; font-size: 1rem; transition: color 0.3s;">Home</a></li>
-      <li><a href="otherpage.html" style="text-decoration: none; color: #fff; font-size: 1rem; transition: color 0.3s;">Scheduling</a></li>
-      <li><a href="people.html" style="text-decoration: none; color: #fff; font-size: 1rem; transition: color 0.3s;">People</a></li>
-      <li><a href="#contact" style="text-decoration: none; color: #fff; font-size: 1rem; transition: color 0.3s;">Contact</a></li>
-      <li><a href="#gallery" style="text-decoration: none; color: #fff; font-size: 1rem; transition: color 0.3s;">Gallery</a></li>
-    </ul>
-  </nav>
+    <!-- Navigation Tab -->
+    <nav class="navigation-bar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="otherpage.html">Scheduling</a></li>
+        <li><a href="people.html">People</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="content.html">Content</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+      </ul>
+    </nav>
+  </div>
 
   <!-- Card Section -->
   <div class="card-section">
-
-    <!-- Flipping ID Card 1 -->
     <div class="card-grid">
+      <!-- Flipping ID Card 1 -->
       <div class="card-container" onclick="flipCard(this)">
         <div class="card">
           <!-- Front Side -->
           <div class="card-front">
             <img src="malenia.png" alt="Profile Picture" class="profile-image">
-            <h2 class="name" style= "color: #ffffff";>Lara</h2>
-            <p class="info" style= "color: #ffffff">The creator of this website</p>
+            <h2 class="name">Lara</h2>
+            <p class="info">The creator of this website</p>
           </div>
-
           <!-- Back Side -->
           <div class="card-back">
             <h3>Stats</h3>
@@ -54,7 +55,9 @@
                   <div class="block filled"></div>
                   <div class="block filled"></div>
                   <div class="block filled"></div>
-                  <div class="block"></div><div class="block"></div><div class="block"></div>
+                  <div class="block"></div>
+                  <div class="block"></div>
+                  <div class="block"></div>
                 </div>
               </div>
               <div class="skill">
@@ -76,8 +79,14 @@
                 <p>Stability</p>
                 <div class="progress-bar">
                   <div class="block filled"></div>
-                  <div class="block"></div><div class="block"></div>
-                  <div class="block"></div><div class="block"></div><div class="block"></div><div class="block"></div><div class="block"></div><div class="block"></div>
+                  <div class="block"></div>
+                  <div class="block"></div>
+                  <div class="block"></div>
+                  <div class="block"></div>
+                  <div class="block"></div>
+                  <div class="block"></div>
+                  <div class="block"></div>
+                  <div class="block"></div>
                   <div class="block"></div>
                 </div>
               </div>
@@ -89,11 +98,13 @@
       <!-- Flipping ID Card 2 -->
       <div class="card-container" onclick="flipCard(this)">
         <div class="card">
+          <!-- Front Side -->
           <div class="card-front">
             <img src="albinauric.png" alt="Profile Picture" class="profile-image">
-            <h2 class="name" style= "color: #ffffff">Felipe</h2>
-            <p class="info" style= "color: #ffffff">Bastard who won't reply</p>
+            <h2 class="name">Felipe</h2>
+            <p class="info">Bastard who won't reply</p>
           </div>
+          <!-- Back Side -->
           <div class="card-back">
             <h3>Stats</h3>
             <div class="skill-container">
@@ -101,9 +112,15 @@
                 <p>Texting</p>
                 <div class="progress-bar">
                   <div class="block filled"></div>
-                  <div class="block"></div><div class="block"></div><div class="block"></div>
-                  <div class="block"></div><div class="block"></div><div class="block"></div>
-                  <div class="block"></div><div class="block"></div><div class="block"></div>
+                  <div class="block"></div>
+                  <div class="block"></div>
+                  <div class="block"></div>
+                  <div class="block"></div>
+                  <div class="block"></div>
+                  <div class="block"></div>
+                  <div class="block"></div>
+                  <div class="block"></div>
+                  <div class="block"></div>
                 </div>
               </div>
               <div class="skill">
@@ -125,27 +142,34 @@
                 <p>Stability</p>
                 <div class="progress-bar">
                   <div class="block filled"></div>
-                  <div class="block"></div><div class="block"></div>
-                  <div class="block"></div><div class="block"></div><div class="block"></div><div class="block"></div><div class="block"></div><div class="block"></div>
+                  <div class="block"></div>
+                  <div class="block"></div>
+                  <div class="block"></div>
+                  <div class="block"></div>
+                  <div class="block"></div>
+                  <div class="block"></div>
+                  <div class="block"></div>
+                  <div class="block"></div>
                   <div class="block"></div>
                 </div>
               </div>
             </div>
           </div> <!-- End of card-back -->
-        </div>
+        </div> <!-- End of card -->
       </div> <!-- End of card-container -->
     </div> <!-- End of card-grid -->
-  </div>
+  </div> <!-- End of card-section -->
 
   <footer class="footer">
-    <div class="footer-content" style="color: #fff;">
-        <p>&copy; 2024 Tae Kwon Do On The Go. All rights reserved.</p>
-        <nav class="footer-nav">
-            <a href="/privacy-policy">Privacy Policy</a>
-            <a href="/terms-of-service">Terms of Service</a>
-            <a href="/contact">Contact Us</a>
-        </nav>
+    <div class="footer-content">
+      <p>&copy; 2024 Tae Kwon Do On The Go. All rights reserved.</p>
+      <nav class="footer-nav">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms-of-service">Terms of Service</a>
+        <a href="/contact">Contact Us</a>
+      </nav>
     </div>
   </footer>
   <script src="script.js"></script>
 </body>
+</html>

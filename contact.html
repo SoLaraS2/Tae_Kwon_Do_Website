@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tae Kwon Do On The Go - Contact</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="header-container">
+    <!-- Logo and Website Name -->
+    <div class="logo-header">
+      <div class="site-title">
+        <img src="logo.png" alt="Website Logo">
+        <span>Tae Kwon Do On The Go</span>
+      </div>
+    </div>
+
+    <!-- Navigation Tab -->
+    <nav class="navigation-bar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="otherpage.html">Scheduling</a></li>
+        <li><a href="people.html">People</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="content.html">Content</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Contact Section -->
+  <div class="header-box">
+    <h1>Contact Us</h1>
+  </div>
+
+  <div class="description-box">
+    <p>If you have any questions, comments, or concerns, feel free to send us a message or text us!</p>
+  </div>
+
+  <div style="max-width:600px; margin:0 auto 40px auto; background-color:#f7b733; padding:20px; border-radius:8px;">
+    <h2 style="margin-bottom:20px;">Send Us a Message</h2>
+    
+    <!-- FORM ACTION POINTS TO OUR NEW PHP SCRIPT -->
+    <form id="contactForm" action="send_email.php" method="POST" style="display:flex; flex-direction:column; gap:15px;">
+      <input type="text" name="name" placeholder="Your Name" required style="padding:10px; border-radius:5px; border:1px solid #ccc;">
+      <input type="email" name="email" placeholder="Your Email" required style="padding:10px; border-radius:5px; border:1px solid #ccc;">
+      <input type="text" name="subject" placeholder="Subject" style="padding:10px; border-radius:5px; border:1px solid #ccc;">
+      <textarea name="message" rows="5" placeholder="Your Message" required style="padding:10px; border-radius:5px; border:1px solid #ccc;"></textarea>
+
+      <button type="submit" style="background-color:#4abdac; color:#fff; padding:10px; border:none; border-radius:5px; font-size:1rem; cursor:pointer;">
+        Send Message
+      </button>
+    </form>
+
+    <!-- Success message container -->
+    <div id="message-success" style="display:none; margin-top:20px; color:green; font-weight:bold;">
+      Your message has been sent successfully! We will get back to you soon.
+    </div>
+  </div>
+
+  <!-- Phone Contact -->
+  <div style="max-width:600px; margin:0 auto; background-color:#f7b733; padding:20px; border-radius:8px;">
+    <h2 style="margin-bottom:20px;">Prefer to Text?</h2>
+    <p>Just send a text to <a href="tel:+13036699403" style="color:#fc4a1a; font-weight:bold; text-decoration:none;">(303) 669-9403</a> and we’ll get back to you as soon as possible!</p>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2024 Tae Kwon Do On The Go. All rights reserved.</p>
+      <nav class="footer-nav">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms-of-service">Terms of Service</a>
+        <a href="/contact">Contact Us</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const formData = new FormData(form);
+      
+      fetch('send_email.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.text())
+      .then(response => {
+        document.getElementById('message-success').style.display = 'block';
+        form.reset();
+      })
+      .catch(error => {
+        alert('There was an error sending your message. Please try again later.');
+      });
+    });
+  </script>
+</body>
+</html>

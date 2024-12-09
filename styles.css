@@ -1,17 +1,156 @@
-/* styles.css */
+/* Base Reset/Defaults */
+body, h1, h2, h3, h4, h5, h6, p, ul, li {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+a {
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+/* Body and Layout */
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
-    background-color: #3f946083;
-    font-family: Arial, sans-serif;
+    background-color: #dfdce3; /* Light Grey from palette */
     text-align: center;
-    margin: 0;
     min-height: 100vh;
+    color: #000; /* Black text for readability on light background */
 }
 
+/* Fixed Header and Nav */
+.header-container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.logo-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #4abdac; /* Teal */
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo-header .site-title {
+    display: flex;
+    align-items: center;
+}
+.logo-header .site-title img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+.logo-header .site-title span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.navigation-bar {
+    width: 100%;
+    background-color: #fc4a1a; /* Orange */
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.navigation-bar ul {
+    display: flex;
+    list-style: none;
+}
+
+.navigation-bar li {
+    margin: 0 40px;
+}
+
+.navigation-bar li a {
+    color: #fff;
+    font-size: 1rem;
+    padding: 10px 0;
+    display: inline-block;
+}
+
+.navigation-bar li a:hover {
+    color: #4abdac; /* Teal on hover for contrast */
+}
+
+/* Add top padding to body content so it is not hidden under fixed header */
+body {
+    padding-top: 120px; /* Adjust as needed depending on header height */
+}
+
+/* Header, Description, Schedule Boxes */
+.header-box, .description-box, .schedule-box {
+    width: 100%;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 10px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Using Yellow for these boxes */
+.header-box {
+    background-color: #dfdce3; /* Gray */
+    color: #000; /* Black text for contrast */
+}
+.description-box {
+    background-color: #f7b733; /* Yellow */
+    color: #000;
+}
+.schedule-box {
+    background-color: #f7b733; /* Yellow */
+    color: #000;
+    max-width: 800px;
+    margin-top: 20px;
+}
+
+/* Button Box */
+.button-box {
+    background-color: #4abdac; /* Teal */
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    border-radius: 8px;
+    margin: 20px 0 10px 0;
+    text-align: center;
+}
+/* Card Grid Layout */
+.card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 200px; /* Spacing between cards */
+    max-width: 900px;
+    margin: 0 auto;
+}
 /* Card Styles */
+.card-section {
+    width: 100%;
+    max-height: 1500px;
+    max-width: 900px;
+    background-color: #dfdce3; /* Light Grey */
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin: 0 auto 40px auto;
+}
+
+/* Keep cards structure and functionality, just update colors */
+.card-container {
+    perspective: 1000px;
+    width: 200px;
+    height: 300px;
+}
 .card {
     position: relative;
     width: 100%;
@@ -20,6 +159,7 @@ body {
     transition: transform 0.6s;
 }
 
+/* Card Face Styles */
 .card-front, .card-back {
     position: absolute;
     width: 100%;
@@ -32,10 +172,12 @@ body {
     align-items: center;
     padding: 20px;
     text-align: center;
-    background-color: #3f946083;
+    background-color: #f7b733; /* Teal for card front */
+    color: #fff;
 }
 
 .card-back {
+    background-color: #fc4a1a; /* Orange for card back */
     color: #ffffff;
     transform: rotateY(180deg);
 }
@@ -68,78 +210,16 @@ body {
     gap: 2px;
 }
 
+/* Unfilled block: Light Grey, Filled block: Teal */
 .block {
     width: 15px;
     height: 15px;
-    background-color: #9eecbc83; /* Unfilled block color */
+    background-color: #dfdce3; /* Unfilled block color */
     border-radius: 3px;
 }
 
 .block.filled {
-    background-color: #3f946083; /* Filled block color */
-}
-
-/* Header, Description, Button, and Schedule Boxes */
-.header-box, .description-box, .schedule-box {
-    width: 100%;
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.header-box {
-    background-color: #367e5183; /* Light orange for header */
-}
-
-.description-box {
-    background-color: #367e5183; /* Light blue for description */
-}
-
-.schedule-box {
-    max-width: 800px;
-    background-color: #367e5183;
-    margin-top: 20px;
-}
-
-/* Button Box */
-.button-box {
-    background-color: #02180a83; /* Light green for button box */
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    border-radius: 8px;
-    margin: 20px 0 10px 0;
-    text-align: center;
-}
-
-/* Card Section */
-.card-section {
-    width: 100%;
-    max-height: 1500px;
-    max-width: 900px;
-    background-color: #f2ddf5;
-    padding: 20px;
-    text-align: center;
-    border-radius: 8px;
-    margin: 0;
-    margin-bottom: 40px;
-}
-
-/* Card Grid Layout */
-.card-container {
-    perspective: 1000px;
-    width: 200px;
-    height: 300px;
-}
-
-.card-grid {
-    display: flex;
-    gap: 100px;
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: 900px;
-    min-height: 340px; /* Add a minimum height */
+    background-color: #4abdac; /* Filled block color */
 }
 
 /* Schedule Table */
@@ -147,30 +227,27 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
+    background-color: #dfdce3;
 }
-
 th, td {
     padding: 15px;
     text-align: center;
     border-bottom: 1px solid #ddd;
-    color: #ffffff;
 }
 
 th {
-    background-color: #367e5183;
-    color: white;
+    background-color: #4abdac;
+    color: #fff;
     font-weight: bold;
 }
 
-
-
 tr:hover {
-    background-color: #cfd8dc;
+    background-color: #dfdce3; /* slightly same color, but let's keep it consistent */
 }
 
 td:first-child {
     font-weight: bold;
-    color: #114d23;
+    color: #000;
 }
 
 .schedule-box td, table a {
@@ -178,7 +255,7 @@ td:first-child {
 }
 
 table a {
-    color: #2bd102;
+    color: #fc4a1a; /* Orange text links */
     text-decoration: none;
     font-weight: bold;
 }
@@ -199,7 +276,6 @@ table a:hover {
     justify-content: center;
     align-items: center;
 }
-
 .modal-content {
     background-color: #fff;
     padding: 20px;
@@ -207,22 +283,24 @@ table a:hover {
     max-width: 400px;
     width: 90%;
     text-align: center;
+    color: #000;
 }
-
 .close {
     float: right;
     font-size: 20px;
     cursor: pointer;
 }
 
+/* Footer */
 .footer {
-    background-color: #367e5183;
+    background-color: #4abdac; /* Teal */
     padding: 20px;
     text-align: center;
     font-size: 0.9em;
-    color: #333;
+    color: #fff;
     border-top: 1px solid #ccc;
     width: 100%;
+    margin-top: 40px;
 }
 
 .footer-content {
@@ -237,9 +315,189 @@ table a:hover {
 .footer-nav a {
     margin: 0 10px;
     text-decoration: none;
-    color: #104219;
+    color: #f7b733; /* Yellow for footer links */
 }
 
 .footer-nav a:hover {
     text-decoration: underline;
 }
+
+
+/* Chontun Tae Gukks Section */
+.chontun-tae-gukks {
+    background-color: #f7b733; /* Yellow background to match existing theme */
+    padding: 40px 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 900px;
+    margin: 20px auto;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.chontun-tae-gukks h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #000; /* Black for contrast */
+    text-align: center;
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.1);
+}
+
+.poomsae {
+    background-color: #dfdce3; /* Light Grey */
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.poomsae:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.poomsae h3 {
+    font-size: 1.8rem;
+    color: #fc4a1a; /* Orange */
+    margin-bottom: 10px;
+}
+
+.poomsae p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333; /* Dark gray for readability */
+    margin-bottom: 10px;
+}
+
+.poomsae .spoken-moves {
+    font-weight: bold;
+    color: #4abdac; /* Teal */
+}
+
+.poomsae video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    outline: none;
+}
+
+.poomsae video:hover {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Philosophy Section */
+.philosophy {
+    background-color: #4abdac; /* Teal */
+    padding: 40px 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 900px;
+    margin: 20px auto;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.philosophy h2 {
+    font-size: 2rem;
+    color: #fff; /* White for contrast */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.philosophy p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #fff;
+    text-align: center;
+}
+
+/* Wonshims Section */
+.wonshims {
+    background-color: #fc4a1a; /* Orange */
+    padding: 40px 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 900px;
+    margin: 20px auto;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.wonshims h2 {
+    font-size: 2rem;
+    color: #fff; /* White for contrast */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.wonshims p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.wonshims ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.wonshims li {
+    background-color: #dfdce3; /* Light grey */
+    color: #000;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.wonshims li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.wonshims li strong {
+    font-size: 1.1rem;
+    color: #4abdac; /* Teal to make it stand out */
+}
+
+.wonshims li p {
+    margin-top: 5px;
+    font-size: 0.9rem;
+    color: #555; /* Slightly darker gray for readability */
+}
+
+/* Media Query for Mobile Responsiveness */
+@media (max-width: 768px) {
+    .chontun-tae-gukks, 
+    .philosophy, 
+    .wonshims {
+        padding: 20px 10px;
+    }
+
+    .poomsae {
+        padding: 15px;
+    }
+
+    .poomsae h3 {
+        font-size: 1.5rem;
+    }
+
+    .poomsae p {
+        font-size: 0.9rem;
+    }
+
+    .philosophy h2, 
+    .wonshims h2 {
+        font-size: 1.5rem;
+    }
+
+    .philosophy p, 
+    .wonshims p {
+        font-size: 1rem;
+    }
+}
+
