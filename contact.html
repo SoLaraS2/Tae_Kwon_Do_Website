@@ -40,31 +40,38 @@
 
   <div style="max-width:600px; margin:0 auto 40px auto; background-color:#f7b733; padding:20px; border-radius:8px;">
     <h2 style="margin-bottom:20px;">Send Us a Message</h2>
-    
-    <!-- FORM ACTION POINTS TO OUR NEW PHP SCRIPT -->
-    <form id="contactForm" action="send_email.php" method="POST" style="display:flex; flex-direction:column; gap:15px;">
+  
+    <!-- Netlify Form -->
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="display:flex; flex-direction:column; gap:15px;">
+      <!-- Hidden Input for Netlify to Identify the Form -->
+      <input type="hidden" name="form-name" value="contact">
+      <input type="hidden" name="bot-field">
+  
+      <!-- Form Fields -->
       <input type="text" name="name" placeholder="Your Name" required style="padding:10px; border-radius:5px; border:1px solid #ccc;">
       <input type="email" name="email" placeholder="Your Email" required style="padding:10px; border-radius:5px; border:1px solid #ccc;">
       <input type="text" name="subject" placeholder="Subject" style="padding:10px; border-radius:5px; border:1px solid #ccc;">
       <textarea name="message" rows="5" placeholder="Your Message" required style="padding:10px; border-radius:5px; border:1px solid #ccc;"></textarea>
-
+  
+      <!-- Submit Button -->
       <button type="submit" style="background-color:#4abdac; color:#fff; padding:10px; border:none; border-radius:5px; font-size:1rem; cursor:pointer;">
         Send Message
       </button>
     </form>
-
-    <!-- Success message container -->
+  
+    <!-- Success Message -->
     <div id="message-success" style="display:none; margin-top:20px; color:green; font-weight:bold;">
       Your message has been sent successfully! We will get back to you soon.
     </div>
   </div>
-
+  
+  
   <!-- Phone Contact -->
   <div style="max-width:600px; margin:0 auto; background-color:#f7b733; padding:20px; border-radius:8px;">
     <h2 style="margin-bottom:20px;">Prefer to Text?</h2>
     <p>Just send a text to <a href="tel:+13036699403" style="color:#fc4a1a; font-weight:bold; text-decoration:none;">(303) 669-9403</a> and we’ll get back to you as soon as possible!</p>
   </div>
-
+  
   <footer class="footer">
     <div class="footer-content">
       <p>&copy; 2024 Tae Kwon Do On The Go. All rights reserved.</p>
@@ -75,26 +82,4 @@
       </nav>
     </div>
   </footer>
-
-  <script>
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const form = e.target;
-      const formData = new FormData(form);
-      
-      fetch('send_email.php', {
-        method: 'POST',
-        body: formData
-      })
-      .then(response => response.text())
-      .then(response => {
-        document.getElementById('message-success').style.display = 'block';
-        form.reset();
-      })
-      .catch(error => {
-        alert('There was an error sending your message. Please try again later.');
-      });
-    });
-  </script>
-</body>
-</html>
+  
