@@ -1,92 +1,99 @@
+/*****************************************************
+ *            SURPRISING TEAL + GOLD THEME           *
+ *****************************************************/
+
+/*   **********   COLOR REFERENCE   **********
+      Dark Teal:     #156770
+      Light Teal:    #79B2B8
+      Gold:          #D4AF37
+      Neutral BG:    #F2F2EA
+      Dark Text:     #333
+*/
+
 /* Base Reset/Defaults */
 body, h1, h2, h3, h4, h5, h6, p, ul, li {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-}
-a {
+  }
+  a {
     text-decoration: none;
     transition: color 0.3s;
-}
-
-/* Body and Layout */
-body {
+  }
+  
+  /* Body and Layout */
+  body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #dfdce3; /* Light Grey from palette */
+    background-color: #F2F2EA; /* neutral background */
     text-align: center;
     min-height: 100vh;
-    color: #000; /* Black text for readability on light background */
-}
-
-/* Fixed Header and Nav */
-.header-container {
+    color: #333;              /* dark gray text */
+    padding-top: 120px;       /* space for fixed header */
+  }
+  
+  /* Fixed Header and Nav */
+  .header-container {
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 999;
-}
-
-.logo-header {
+  }
+  
+  /* Top header area */
+  .logo-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #4abdac; /* Teal */
+    background-color: #156770; /* dark teal */
     padding: 10px 20px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.logo-header .site-title {
+  }
+  .logo-header .site-title {
     display: flex;
     align-items: center;
-}
-.logo-header .site-title img {
+  }
+  .logo-header .site-title img {
     width: 40px;
     height: 40px;
     margin-right: 10px;
-}
-.logo-header .site-title span {
+  }
+  .logo-header .site-title span {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #fff;
-}
-
-.navigation-bar {
+    color: #F2F2EA;  /* light text on dark teal */
+  }
+  
+  /* Navigation bar */
+  .navigation-bar {
     width: 100%;
-    background-color: #fc4a1a; /* Orange */
+    background-color: #79B2B8; /* light teal */
     display: flex;
     justify-content: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.navigation-bar ul {
+  }
+  .navigation-bar ul {
     display: flex;
     list-style: none;
-}
-
-.navigation-bar li {
+  }
+  .navigation-bar li {
     margin: 0 40px;
-}
-
-.navigation-bar li a {
-    color: #fff;
+  }
+  .navigation-bar li a {
+    color: #333; /* dark text on light teal */
     font-size: 1rem;
     padding: 10px 0;
     display: inline-block;
-}
-
-.navigation-bar li a:hover {
-    color: #4abdac; /* Teal on hover for contrast */
-}
-
-/* Add top padding to body content so it is not hidden under fixed header */
-body {
-    padding-top: 120px; /* Adjust as needed depending on header height */
-}
-
-/* Header, Description, Schedule Boxes */
-.header-box, .description-box, .schedule-box {
+  }
+  .navigation-bar li a:hover {
+    color: #D4AF37; /* gold on hover */
+  }
+  
+  /* Common Box Styles */
+  .header-box,
+  .description-box,
+  .schedule-box {
     width: 100%;
     padding: 20px;
     border-radius: 8px;
@@ -95,72 +102,78 @@ body {
     max-width: 900px;
     margin-left: auto;
     margin-right: auto;
-}
-
-/* Using Yellow for these boxes */
-.header-box {
-    background-color: #dfdce3; /* Gray */
-    color: #000; /* Black text for contrast */
-}
-.description-box {
-    background-color: #f7b733; /* Yellow */
-    color: #000;
-}
-.schedule-box {
-    background-color: #f7b733; /* Yellow */
-    color: #000;
+  }
+  
+  /* Specific Boxes */
+  .header-box {
+    background-color: #79B2B8; /* light teal */
+    color: #333;
+  }
+  .description-box {
+    background-color: #156770; /* dark teal */
+    color: #F2F2EA;           /* light text */
+  }
+  .schedule-box {
+    background-color: #156770;
+    color: #F2F2EA;
     max-width: 800px;
     margin-top: 20px;
-}
-
-/* Button Box */
-.button-box {
-    background-color: #4abdac; /* Teal */
-    color: #fff;
+  }
+  
+  /* Button Box */
+  .button-box {
+    background-color: #79B2B8; /* light teal */
+    color: #333;
     padding: 20px;
     display: flex;
     justify-content: center;
     border-radius: 8px;
     margin: 20px 0 10px 0;
     text-align: center;
-}
-/* Card Grid Layout */
-.card-grid {
+  }
+  
+  /* Card Grid Layout */
+  .card-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 200px; /* Spacing between cards */
+    gap: 200px; /* spacing between cards */
     max-width: 900px;
     margin: 0 auto;
-}
-/* Card Styles */
-.card-section {
+  }
+  
+  /* Card Section */
+  .card-section {
     width: 100%;
     max-height: 1500px;
     max-width: 900px;
-    background-color: #dfdce3; /* Light Grey */
+    background-color: #F2F2EA; /* matches body background */
     padding: 20px;
     text-align: center;
     border-radius: 8px;
     margin: 0 auto 40px auto;
-}
-
-/* Keep cards structure and functionality, just update colors */
-.card-container {
+  }
+  
+  /* Individual Card */
+  .card-container {
     perspective: 1000px;
     width: 200px;
     height: 300px;
-}
-.card {
+  }
+  .card {
     position: relative;
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
     transition: transform 0.6s;
-}
-
-/* Card Face Styles */
-.card-front, .card-back {
+  }
+  .card-container.flip .card {
+    transform: rotateY(180deg);
+  }
+  
+  /* Front & Back Faces */
+  .card-front,
+  .card-back {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -170,102 +183,91 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     padding: 20px;
     text-align: center;
-    background-color: #f7b733; /* Teal for card front */
-    color: #fff;
-}
-
-.card-back {
-    background-color: #fc4a1a; /* Orange for card back */
-    color: #ffffff;
+  }
+  .card-front {
+    background-color: #79B2B8; /* light teal */
+    color: #333;
+  }
+  .card-back {
+    background-color: #156770; /* dark teal */
+    color: #F2F2EA;
     transform: rotateY(180deg);
-}
-
-.card-container.flip .card {
-    transform: rotateY(180deg);
-}
-
-/* Profile Image */
-.profile-image {
+  }
+  
+  /* Profile Image */
+  .profile-image {
     width: 100px;
     height: 100px;
     border-radius: 50%;
     margin-bottom: 10px;
-}
-
-/* Skill Progress Bars */
-.skill-container {
+  }
+  
+  /* Skill Progress Bars */
+  .skill-container {
     margin-top: 20px;
-}
-
-.skill {
+  }
+  .skill {
     text-align: center;
     margin-bottom: 10px;
-}
-
-.progress-bar {
+  }
+  .progress-bar {
     display: flex;
     justify-content: center;
     gap: 2px;
-}
-
-/* Unfilled block: Light Grey, Filled block: Teal */
-.block {
+  }
+  .block {
     width: 15px;
     height: 15px;
-    background-color: #dfdce3; /* Unfilled block color */
+    background-color: #333; /* dark for unfilled */
     border-radius: 3px;
-}
-
-.block.filled {
-    background-color: #4abdac; /* Filled block color */
-}
-
-/* Schedule Table */
-table {
+  }
+  .block.filled {
+    background-color: #D4AF37; /* gold for filled */
+  }
+  
+  /* Schedule Table */
+  table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
-    background-color: #dfdce3;
-}
-th, td {
+    background-color: #79B2B8; /* light teal */
+  }
+  th, td {
     padding: 15px;
     text-align: center;
-    border-bottom: 1px solid #ddd;
-}
-
-th {
-    background-color: #4abdac;
-    color: #fff;
+    border-bottom: 1px solid #156770;
+  }
+  th {
+    background-color: #156770; /* dark teal */
+    color: #F2F2EA;           /* light text */
     font-weight: bold;
-}
-
-tr:hover {
-    background-color: #dfdce3; /* slightly same color, but let's keep it consistent */
-}
-
-td:first-child {
+  }
+  tr:hover {
+    background-color: #D4AF37; /* same color or lighten if desired */
+  }
+  td:first-child {
     font-weight: bold;
-    color: #000;
-}
-
-.schedule-box td, table a {
+    color: #333;
+  }
+  .schedule-box td,
+  table a {
     cursor: pointer;
-}
-
-table a {
-    color: #fc4a1a; /* Orange text links */
+  }
+  table a {
+    color: #333;
     text-decoration: none;
     font-weight: bold;
-}
-
-table a:hover {
+  }
+  table a:hover {
+    color: #D4AF37; /* gold on hover */
     text-decoration: underline;
-}
-
-/* Modal Style */
-.modal {
+  }
+  
+  /* Modal */
+  .modal {
     display: none; /* Hidden by default */
     position: fixed;
     top: 0;
@@ -275,252 +277,260 @@ table a:hover {
     background-color: rgba(0, 0, 0, 0.5);
     justify-content: center;
     align-items: center;
-}
-.modal-content {
-    background-color: #fff;
+  }
+  .modal-content {
+    background-color: #F2F2EA; /* neutral background */
     padding: 20px;
     border-radius: 8px;
     max-width: 400px;
     width: 90%;
     text-align: center;
-    color: #000;
-}
-.close {
+    color: #333;
+  }
+  .close {
     float: right;
     font-size: 20px;
     cursor: pointer;
-}
-
-/* Footer */
-.footer {
-    background-color: #4abdac; /* Teal */
+  }
+  
+  /* Footer */
+  .footer {
+    background-color: #156770; /* dark teal */
     padding: 20px;
     text-align: center;
     font-size: 0.9em;
-    color: #fff;
-    border-top: 1px solid #ccc;
+    color: #F2F2EA; /* light text */
+    border-top: 1px solid #79B2B8;
     width: 100%;
     margin-top: 40px;
-}
-
-.footer-content {
+  }
+  .footer-content {
     max-width: 9000px;
     margin: 0 auto;
-}
-
-.footer-nav {
+  }
+  .footer-nav {
     margin-top: 10px;
-}
-
-.footer-nav a {
+  }
+  .footer-nav a {
     margin: 0 10px;
     text-decoration: none;
-    color: #f7b733; /* Yellow for footer links */
-}
-
-.footer-nav a:hover {
+    color: #D4AF37; /* gold links */
+  }
+  .footer-nav a:hover {
     text-decoration: underline;
-}
-
-
-/* Chontun Tae Gukks Section */
-.chontun-tae-gukks {
-    background-color: #f7b733; /* Yellow background to match existing theme */
+  }
+  
+  /* Chontun Tae Gukks Section */
+  .chontun-tae-gukks {
+    background-color: #156770; /* dark teal */
     padding: 40px 20px;
     border-radius: 10px;
     width: 100%;
     max-width: 900px;
     margin: 20px auto;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-.chontun-tae-gukks h2 {
+  }
+  .chontun-tae-gukks h2 {
     font-size: 2rem;
     margin-bottom: 20px;
-    color: #000; /* Black for contrast */
+    color: #F2F2EA; /* light text */
     text-align: center;
     text-shadow: 2px 2px 2px rgba(0,0,0,0.1);
-}
-
-.poomsae {
-    background-color: #dfdce3; /* Light Grey */
+  }
+  
+  /* Poomsae Container */
+  .poomsae {
+    background-color: #79B2B8; /* light teal */
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 20px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     transition: all 0.3s ease-in-out;
-}
-
-.poomsae:hover {
+  }
+  .poomsae:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-}
-
-.poomsae h3 {
+  }
+  .poomsae h3 {
     font-size: 1.8rem;
-    color: #fc4a1a; /* Orange */
+    color: #333;
     margin-bottom: 10px;
-}
-
-.poomsae p {
+  }
+  .poomsae p {
     font-size: 1rem;
     line-height: 1.6;
-    color: #333; /* Dark gray for readability */
+    color: #333;
     margin-bottom: 10px;
-}
-
-.poomsae .spoken-moves {
+  }
+  .poomsae .spoken-moves {
     font-weight: bold;
-    color: #4abdac; /* Teal */
-}
-
-.poomsae video {
+    color: #D4AF37; /* gold accent */
+  }
+  .poomsae video {
     width: 100%;
     height: auto;
     border-radius: 10px;
     margin-top: 15px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     outline: none;
-}
-
-.poomsae video:hover {
+  }
+  .poomsae video:hover {
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-}
-
-/* Philosophy Section */
-.philosophy {
-    background-color: #4abdac; /* Teal */
+  }
+  
+  /* Philosophy Section */
+  .philosophy {
+    background-color: #156770; /* dark teal */
     padding: 40px 20px;
     border-radius: 10px;
     width: 100%;
     max-width: 900px;
     margin: 20px auto;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-.philosophy h2 {
+  }
+  .philosophy h2 {
     font-size: 2rem;
-    color: #fff; /* White for contrast */
+    color: #F2F2EA; /* light text */
     margin-bottom: 20px;
     text-align: center;
-}
-
-.philosophy p {
+  }
+  .philosophy p {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #fff;
+    color: #F2F2EA;
     text-align: center;
-}
-
-/* Wonshims Section */
-.wonshims {
-    background-color: #fc4a1a; /* Orange */
+  }
+  
+  /* Wonshims Section */
+  .wonshims {
+    background-color: #156770; /* dark teal */
     padding: 40px 20px;
     border-radius: 10px;
     width: 100%;
     max-width: 900px;
     margin: 20px auto;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-.wonshims h2 {
+  }
+  .wonshims h2 {
     font-size: 2rem;
-    color: #fff; /* White for contrast */
+    color: #F2F2EA;
     margin-bottom: 20px;
     text-align: center;
-}
-
-.wonshims p {
+  }
+  .wonshims p {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #fff;
+    color: #F2F2EA;
     text-align: center;
     margin-bottom: 20px;
-}
-
-.wonshims ul {
+  }
+  .wonshims ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-}
-
-.wonshims li {
-    background-color: #dfdce3; /* Light grey */
-    color: #000;
+  }
+  .wonshims li {
+    background-color: #79B2B8; /* light teal for list items */
+    color: #333;
     border-radius: 8px;
     padding: 15px;
     margin-bottom: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     transition: all 0.3s ease-in-out;
-}
-
-.wonshims li:hover {
+  }
+  .wonshims li:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-}
-
-.wonshims li strong {
+  }
+  .wonshims li strong {
     font-size: 1.1rem;
-    color: #4abdac; /* Teal to make it stand out */
-}
-
-.wonshims li p {
+    color: #156770; /* dark teal accent */
+  }
+  .wonshims li p {
     margin-top: 5px;
     font-size: 0.9rem;
-    color: #555; /* Slightly darker gray for readability */
-}
-
-/* Media Query for Mobile Responsiveness */
-@media (max-width: 768px) {
-    .chontun-tae-gukks, 
-    .philosophy, 
+    color: #555;
+  }
+  
+  /* Media Query for Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .chontun-tae-gukks,
+    .philosophy,
     .wonshims {
-        padding: 20px 10px;
+      padding: 20px 10px;
     }
-
+  
     .poomsae {
-        padding: 15px;
+      padding: 15px;
     }
-
     .poomsae h3 {
-        font-size: 1.5rem;
+      font-size: 1.5rem;
     }
-
     .poomsae p {
-        font-size: 0.9rem;
+      font-size: 0.9rem;
     }
-
-    .philosophy h2, 
+    .philosophy h2,
     .wonshims h2 {
-        font-size: 1.5rem;
+      font-size: 1.5rem;
     }
-
-    .philosophy p, 
+    .philosophy p,
     .wonshims p {
-        font-size: 1rem;
+      font-size: 1rem;
     }
-}
-
-/* Chontun Taegukk sections */
-.poomsae {
+  }
+  
+  /* Additional spacing for Poomsae sections */
+  .poomsae {
     margin-bottom: 2rem;
   }
+  
+  /* Steps Box (hidden by default) */
   .steps-box {
     margin: 1rem 0;
     padding: 1rem;
-    border: 1px solid #ccc;
+    border: 1px solid #333;
     display: none; /* Hidden by default */
-    background-color: #f8f8f8;
+    background-color: #F2F2EA; /* neutral background */
+    text-align: left;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 4px;
   }
+  .steps-box ol {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  /* Alternating row colors */
+  .steps-box li {
+    padding: 0.5rem;
+    border-bottom: 1px solid #ccc;
+  }
+  .steps-box li:nth-child(odd) {
+    background-color: #79B2B8; /* light teal */
+    color: #333;
+  }
+  .steps-box li:nth-child(even) {
+    background-color: #F2F2EA; /* neutral background */
+    color: #333;
+  }
+  .steps-box li:last-child {
+    border-bottom: none;
+  }
+  
+  /* Toggle Steps Button */
   .toggle-steps {
-    background-color: #007BFF;
-    color: #fff;
+    background-color: #D4AF37; 
+    color: #333;
     border: none;
     padding: 0.5rem 1rem;
     cursor: pointer;
     font-size: 1rem;
     border-radius: 4px;
+    display: block;
+    text-align: center;
   }
   .toggle-steps:hover {
-    background-color: #0062cc;
+    background-color: #156770; /* dark teal */
+    color: #F2F2EA;
   }
+  
